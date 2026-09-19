@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "app/globals.css"
+        ],
+        "createdAt": "2026-09-19T11:34:49.167Z",
+        "reason": "audit-confirmed: single evidence-citation left-border marker (blockquote/dossier/pullquote/narr-card), documented in DESIGN.md Shapes section, not decorative slop"
+      },
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "app/globals.css"
+        ],
+        "createdAt": "2026-09-19T11:34:49.374Z",
+        "reason": "audit-confirmed: .ledger-fill width IS the chart's encoded data value, not decorative animation; scaleX would break the hatch/solid texture swap"
+      }
+    ]
+  }
+}
