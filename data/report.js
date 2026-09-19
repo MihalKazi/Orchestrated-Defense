@@ -136,8 +136,8 @@ export const coordinationCopy = {
     intro:
       "Many older pages in the network exhibit a history of drastic name changes, a common tactic used to retain followers while pivoting to political manipulation.",
     lines: [
-      "Xpress News evolved from \"Journalist Saiful Islam\" (2016) to \"CHT Journal\" to \"Bachelor Point Season 4\" before adopting its current name.",
-      "Banglar Bani began as \"CHT Photography\" (2017) and eventually became a political mouthpiece.",
+      "Xpress News was created in 2016 as \"সাংবাদিক সাইফুল ইসলাম\" (Journalist Saiful Islam), passed through five more names — including two separate \"Bechelor Point\" seasons — before adopting its current name in August 2024.",
+      "Banglar Bani (বাংলার বাণী) began as \"CHT Photography\" in 2017, cycled through a tour page and an organic-products page, and became \"Dream Aviary\" before adopting its current name in September 2025.",
     ],
   },
   sub3: {
@@ -151,17 +151,22 @@ export const renameChains = [
   {
     page: "Xpress News",
     history: [
-      { year: "2016", name: "Journalist Saiful Islam" },
-      { name: "CHT Journal" },
-      { name: "Bachelor Point Season 4" },
+      { year: "2016", name: "সাংবাদিক সাইফুল ইসলাম" },
+      { name: "সিএইচটি জার্নাল।" },
+      { name: "Bechelor Point All Season" },
+      { name: "Bechelor Point Season 4" },
+      { name: "Khagrachhari Express / খাগড়াছড়ি এক্সপ্রেস" },
       { name: "Xpress News", current: true },
     ],
   },
   {
     page: "Banglar Bani",
     history: [
-      { year: "2017", name: "CHT Photography" },
-      { name: "Banglar Bani", current: true },
+      { year: "2017", name: "CHT photography" },
+      { name: "CHT Tour" },
+      { name: "Organic Products Of CHT" },
+      { name: "Dream Aviary" },
+      { name: "বাংলার বাণী", current: true },
     ],
   },
 ];
