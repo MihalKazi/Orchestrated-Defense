@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-19T00:00:00.000Z",
+  "title": "Design System: Orchestrated Defense",
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Wire Red", "canonical": "#E5534B", "tonalRamp": ["#3D1210", "#5C1B18", "#832622", "#AC332C", "#D6423A", "#E5534B", "#EF7C74", "#F6ACA6"] },
+      "paper": { "role": "neutral", "displayName": "Case Paper", "canonical": "#18191C", "tonalRamp": ["#0A0A0B", "#121214", "#18191C", "#1F2023", "#232427", "#2C2C31", "#3C3C42", "#B4B5BA"] },
+      "paper-deep": { "role": "neutral", "displayName": "Deep Paper", "canonical": "#1F2023", "tonalRamp": ["#0A0A0B", "#121214", "#18191C", "#1F2023", "#232427", "#2C2C31", "#3C3C42", "#B4B5BA"] },
+      "paper-card": { "role": "neutral", "displayName": "Card Paper", "canonical": "#232427", "tonalRamp": ["#0A0A0B", "#121214", "#18191C", "#1F2023", "#232427", "#2C2C31", "#3C3C42", "#B4B5BA"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#F1F1EE", "tonalRamp": ["#8B8C92", "#96979C", "#B4B5BA", "#CFD0CD", "#E4E4E1", "#F1F1EE", "#F6F6F4", "#FAFAF9"] },
+      "status-critical": { "role": "chart", "displayName": "Critical", "canonical": "#BE2E31" },
+      "status-warning": { "role": "chart", "displayName": "Warning", "canonical": "#A58B00" },
+      "status-organic": { "role": "chart", "displayName": "Organic", "canonical": "#00986C" },
+      "status-new": { "role": "chart", "displayName": "New", "canonical": "#3C7EBE" },
+      "status-neutral": { "role": "chart", "displayName": "Chart Neutral", "canonical": "#7D8072" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero H1, section H2 headlines, findings labels, stat/media-break text. Always uppercase." },
+      "body": { "displayName": "Body", "purpose": "Long-form reading paragraphs, dek text, narrative cards." },
+      "mono": { "displayName": "Mono", "purpose": "Bylines, datelines, stat values, evidence tags, hub IDs, ledger numbers, kickers." }
+    },
+    "shadows": [
+      { "name": "overlay-lightbox", "value": "0 8px 40px rgba(0,0,0,.4)", "purpose": "Floating zoomed evidence image in the lightbox." },
+      { "name": "overlay-exhibit-card", "value": "0 6px 24px rgba(0,0,0,.4)", "purpose": "Caption card floating over an exhibit photo." }
+    ],
+    "motion": [
+      { "name": "ease-reveal", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "Scroll-reveal fade/translate and ledger fill-bar animation." },
+      { "name": "duration-reveal", "value": "0.8s", "purpose": "Scroll reveal transition length." },
+      { "name": "duration-ledger-fill", "value": "2.6s", "purpose": "Ledger bar width animation on reveal." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "720px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Icon Nav Button",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Circular mono-glyph nav link in the sticky topbar; fills Wire Red when active.",
+      "html": "<a class=\"ds-navicon ds-navicon--active\" href=\"#\">01</a>",
+      "css": ".ds-navicon { font-family: 'JetBrains Mono', Consolas, monospace; font-size: .72rem; text-decoration: none; color: #8B8C92; width: 2.75em; height: 2.75em; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: color .15s, background .15s; } .ds-navicon:hover { color: #F1F1EE; background: #1F2023; } .ds-navicon--active { color: #0A0A0C; background: #E5534B; }"
+    },
+    {
+      "name": "Fact Card",
+      "kind": "card",
+      "refersTo": "fact-card",
+      "description": "Flat evidence card with a Wire Red top accent border, no shadow.",
+      "html": "<div class=\"ds-fact-card\"><span class=\"ds-fact-card-label\">Ad Volume</span><p class=\"ds-fact-card-text\">$3,200 spent across 41 sponsored posts in the campaign window.</p></div>",
+      "css": ".ds-fact-card { border: 1px solid #2C2C31; border-top: 2px solid #E5534B; background: #232427; padding: 1.3rem 1.4rem; transition: border-color .2s ease, transform .2s ease; } .ds-fact-card:hover { border-color: #3C3C42; transform: translateY(-2px); } .ds-fact-card-label { display: block; font-family: 'JetBrains Mono', monospace; font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; color: #E5534B; margin-bottom: .55rem; } .ds-fact-card-text { font-size: 1rem; line-height: 1.55; color: #F1F1EE; margin: 0; }"
+    },
+    {
+      "name": "Ledger Row",
+      "kind": "custom",
+      "description": "Expandable data row with a hatched Wire Red fill bar; hover/active states turn the fill solid and reveal a left accent border.",
+      "html": "<button class=\"ds-ledger-row\"><span class=\"ds-ledger-rank\">01</span><span class=\"ds-ledger-name\">Target Name</span><span class=\"ds-ledger-bar\"><span class=\"ds-ledger-fill\" style=\"width:72%\"></span></span><span class=\"ds-ledger-n\">312</span></button>",
+      "css": ".ds-ledger-row { all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: grid; grid-template-columns: 2.4rem minmax(9rem,15rem) 1fr 4rem; align-items: center; gap: 1rem; padding: 1rem .6rem; border-left: 2px solid transparent; transition: background .2s ease, border-left-color .2s ease; } .ds-ledger-row:hover, .ds-ledger-row:focus-visible { background: rgba(229,83,75,.06); border-left-color: #E5534B; } .ds-ledger-rank { font-size: .75rem; font-weight: 700; color: #8B8C92; } .ds-ledger-name { font-size: 1rem; font-weight: 600; color: #F1F1EE; } .ds-ledger-bar { display: block; height: .85rem; background: rgba(241,241,238,.08); } .ds-ledger-fill { display: block; height: 100%; background: repeating-linear-gradient(90deg, #E5534B 0 3px, transparent 3px 6px); transition: width 2.6s cubic-bezier(.16,1,.3,1); } .ds-ledger-row:hover .ds-ledger-fill { background: #E5534B; } .ds-ledger-n { font-size: 1.15rem; font-weight: 700; color: #F1F1EE; text-align: right; }"
+    },
+    {
+      "name": "Back to Top",
+      "kind": "button",
+      "description": "Fixed circular button, flat at rest, Wire Red border/text on hover.",
+      "html": "<button class=\"ds-back-to-top\">&uarr;</button>",
+      "css": ".ds-back-to-top { width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 1px solid #3C3C42; background: #232427; color: #F1F1EE; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color .2s ease, background .2s ease, color .2s ease; } .ds-back-to-top:hover { border-color: #E5534B; background: rgba(229,83,75,.12); color: #E5534B; }"
+    },
+    {
+      "name": "Kicker Label",
+      "kind": "custom",
+      "description": "Uppercase mono eyebrow label in Wire Red, used above section headlines and exhibits.",
+      "html": "<span class=\"ds-kicker\">Coordination</span>",
+      "css": ".ds-kicker { display: block; font-family: 'JetBrains Mono', monospace; font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; color: #E5534B; font-weight: 700; margin-bottom: 1.1rem; }"
+    },
+    {
+      "name": "Pull Quote",
+      "kind": "custom",
+      "description": "Left-accented blockquote used for verbatim evidence quotes.",
+      "html": "<div class=\"ds-pullquote-box\"><span class=\"ds-pullquote-tag\">From the network</span><p class=\"ds-pullquote-text\">\"This coordinated network reached over 2 million impressions in six weeks.\"</p></div>",
+      "css": ".ds-pullquote-box { margin: 2.4rem 0; max-width: 36rem; } .ds-pullquote-tag { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: #E5534B; margin-bottom: .7rem; font-weight: 700; } .ds-pullquote-text { font-size: 1.55rem; font-weight: 600; line-height: 1.35; color: #F1F1EE; margin: 0; padding-left: 1.5rem; border-left: 3px solid #E5534B; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Case File",
+    "overview": "This is a redacted-dossier interface, not a marketing page: near-black paper, evidence tagged in mono type, findings numbered and filed rather than pitched. Every color decision reads as forensic annotation — a single Wire Red stamps urgency onto flagged items (kickers, findings numbers, evidence tags, active states), while status codes (critical/warning/organic/new) carry their own restrained hues for chart legends and network diagrams only. The system rejects glossy elevation: everything sits flat on three tonal layers of near-black, with shadows reserved for the rare floating overlay (lightbox, exhibit caption card) where something genuinely lifts off the page.\n\nTypography does the identity work. Big Shoulders (condensed, heavy, uppercase) reads as investigative-headline type — tight line-height, no ornament. Source Serif 4 carries the long-form reading body with a generous 1.35rem/1.65 rhythm built for sustained reading, not skimming. JetBrains Mono is reserved for anything that behaves like data or metadata: bylines, datelines, stat values, evidence tags, hub IDs, ledger numbers — the visual signal that \"this is a measured fact, not prose.\"",
+    "keyCharacteristics": [
+      "Near-black dossier paper with three tonal steps (paper / paper-deep / paper-card), no shadows at rest",
+      "One accent (Wire Red) used sparingly as an urgency/evidence marker, never decoratively",
+      "Condensed uppercase display type for headlines; serif for reading body; mono for anything numeric or evidentiary",
+      "Status-coded chart palette (critical/warning/organic/new/neutral) kept separate from the brand accent",
+      "Flat, ledger-like data presentation (rows, ranks, bars) over card-heavy dashboard patterns"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Wire Red appears on evidence and urgency markers only — kickers, findings numbers, active states, chart's \"this is the finding\" series. It never becomes a background fill, a large surface, or a decorative flourish. Its rarity is what makes it read as a flag.", "section": "colors" },
+      { "name": "The Status-Never-Brand Rule", "body": "Chart status colors (critical/warning/organic/new/neutral) never leak into UI chrome, buttons, or navigation. They exist only inside data visualizations, so a reader can trust that any red they see in prose or nav is the brand accent, not a severity code.", "section": "colors" },
+      { "name": "The All-Caps Headline Rule", "body": "Every h1/h2/h3 is uppercase, condensed (Big Shoulders), and set at line-height 0.98 — headlines behave like stamped section markers, not friendly greetings.", "section": "typography" },
+      { "name": "The Data-Is-Mono Rule", "body": "Any value that is a measurement, count, date, byline, or ID renders in JetBrains Mono with tabular-nums — the reader learns to trust mono type as \"this number is a fact,\" never used for prose emphasis.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest; a shadow only ever appears under a floating overlay (lightbox, exhibit card), never under a resting card, button, or nav element.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Wire Red confined to evidence/urgency markers (kickers, active states, findings numbers, chart \"finding\" series) — never a large fill.",
+      "Do render every count, date, byline, or ID in JetBrains Mono with tabular numerals.",
+      "Do use the three-step tonal paper scale for depth; reach for a shadow only on true floating overlays.",
+      "Do keep headlines uppercase, condensed, and tightly leaded (line-height ~0.98)."
+    ],
+    "donts": [
+      "Don't introduce drop shadows on resting cards, buttons, or sections — it breaks the flat dossier read.",
+      "Don't reuse chart status colors (critical/warning/organic/new/neutral) in UI chrome, nav, or buttons — they're reserved for data encoding only.",
+      "Don't round corners past ~8px anywhere except fully circular icon controls — soft, bubbly shapes contradict the case-file form language.",
+      "Don't fabricate testimonials, stats, or exhibits — all evidentiary content must trace back to data/report.js and the source report."
+    ]
+  }
+}
