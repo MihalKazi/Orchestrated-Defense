@@ -73,3 +73,39 @@ plugins/impeccable-live.client.ts
 app/plugins/impeccable-live.client.ts
 src/plugins/impeccable-live.client.ts
 # impeccable-live-ignore-end
+
+# Added: standard ignores
+# OS and editor
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+.vscode/
+.idea/
+*.swp
+
+# Environment and secrets (never commit real values)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+
+# Next.js
+.next/
+out/
+.vercel/
